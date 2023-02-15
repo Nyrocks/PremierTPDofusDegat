@@ -2,6 +2,60 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
+/*
+                                                                                                    
+                                               WWWWWWWW                                             
+                                          WWNNNXXXXXXXXXNNWWWW                                      
+                                      WWNNXK0OOkxxxxxxxkO00KXNNW                                    
+                                    WNNX0Okdollllllllllllloxk0KXNWW                                 
+                                  WNXKOxdlllodkOO00000OOxdlllodk0KXNW                               
+                                WNXKOxollox0KXNNNNNNNNNNNXKOxolloxOKXNW                             
+                              WNXKOxolldOKNWWWWNNNNNNNNNNNNNX0kollok0KNWW                           
+                             WNX0kocldOXWWWWWWWNNNNNNNNNNNNNNNXKkocldk0XNW                          
+                           WWXKOxlcokKNWWWWWNNNNNNNNNNNNNXOdxKNNX0xlcox0KNWW                        
+                          WNX0kocld0XNNNWNNNNNNNXXXXNNNNXx:;:dXNNNXOocldOKXWW                       
+                         WNX0xc;cxKNNNNNNNNNXkdooooodxk0kc::;l0NNNNX0dlcok0XNW                      
+                        WNK0d;..;oOKXNNNNXXK0d;,;;;::;;cc:;;;l0NNNNNNKxlcok0XNW                     
+                       WNKOd;.':cccldk0K00OOOOd:;;:::c:::;;;:d0KXNNNNNKklcok0XNW                    
+                      WNK0d;.,:oooollc:cloxkOOOxo::;;::::;;:dOOO0KXNNNNXkocok0XNW                   
+                     WNX0x;.':oddooolccc::::cloxkxxdoc::;;,,:ldxkO0KXNNNXklcok0XNW                  
+                    WNX0kc'';lodoollcccccccc::::clloddxxxddoolc:ccodOKXNNKxlcokKXW                  
+                    WXKkoc;;clooolcccclllcccccccc:::::clodxOOOOkxdl::lkKNNKxlcdOKNW                 
+                   WNKOdclddccllllcllcllclllclllllccccc::::codkO00Okdl:lxKX0dclx0KNW                
+                  WNX0xlcd0XOocccccclllllllllllllllllllcccc:::coxO000Oko:cx0Ooclk0XWW               
+                  WX0kocoOXNN0dc::cccllllllllllllllllllllllcccc::lxO000OkdclxdlcdOKNW               
+                 WNKOdclxKNNXK0kdlc:::cccccllllllllllllllllllllcc::lxO0000Oo:clclx0XNW              
+                WWX0klcoOXNNXK0000kxollc:::::cccccccclllllllllllccc:cdO000KKx:;ccokKNW              
+                WNKOdclxKNNNK000000000Okkxdoollccc:::::cccllllllllcc::lk000XXk:;:lx0XNW             
+                WX0kocoOXNNXK00000000000000000OOOkkxxdolc::cclllllllc::lk00KNXx:;:oOKNW             
+               WNX0xlcxKNNNXK0xxO00000000000000000000OOOOxoc:cclllllllc:lk0KXNKo;;lx0XWW            
+               WNKOdclkXNNNX0kc;lxO000000000000OxollccccoxOOdc:cllllllc::oOKXNNOc,:dOXNW            
+               WXKkocoOXNNNX0o;;;:cldxkO000000xc;,,;;;,;cx000kl:cllllllc:ckKXNNKo;:oOKNW            
+               WX0klcd0NNNNXOl;:cccc:::clodxxkdolc:;;;,ck00000kl:cllllll::dKXNNXd;;oOKNW            
+               WX0kold0NNNNXOc:cllllcccccc:::cclodxdc,,lO000000d:cllllllc:dKNNNXx:;okKNW            
+               WX0kold0XNNNXOl:cclccccccclllllc::cldxc,lOK0K0K0kc:llllllc:dKNNNXx::oOKNW            
+               WNKkdloOXNNNN0o::c::okOxc:clllllcc;;cko;lOKKKKKKkccllllll:cxXNNNKd;cdOKNW            
+               WNKOxooxKNNNNXx:::::d0K0d::cllllcc:;lko,lOKKKKK0dcclllllc:l0NNNN0l:lx0XNW            
+                WX0kdodOXNNNN0l;::;ckKKOo:::ccc::ldxd:,lOKKKKKkl:llllll:cxXNNNXxc:oOKNW             
+                WNKOxddx0XNNNXOl;;;;ck0K0kdolloodxdo:,,lOKKK0kl:clllllc:dKNNNXOlclx0XNW             
+                 WNKOdddkKNNNNXOl;;;;:ok0KKK0xool:::;;;o0KKOdcccllllc:cxKNNNX0dclxOKNW              
+                 WWXKOddxkKXNNNX0o:;;;;:odxxoc:ccc::;:lk0kdlcclllllcclkKNNNX0dlldOKNW               
+                  WWXKOxdxk0XNNNNKkl:;:::::ccllllcc::loolccclllllccld0XNNNKOdllxOKNW                
+                   WWXKOxdxkOKXNNNXKkoc:::cllloollcccccccclllcccclx0XXNNX0kdoox0KNW                 
+                     WNX0kxxxk0KXNNXXKOxolccccllllllccccccc:ccldk0XXNNXKOxdodk0XNW                  
+                      WWXKOkxxxk0KXNNXXXK0OxddollllllllllodxkOKKXXNXX0Oxdddk0KNWW                   
+                        WNXKOkxxxkO0KXXNXXXXKKK000000000KKKKXXXXXXKOkxddxk0KXWW                     
+                          WNXK0OxxxxkO00KXXXXXXXXXXXXXXXXXXXXKK0OkxxdxxO0KNNW                       
+                            WWNXK0kkxxxxkkOO00KKKKKKKKKK000OkkxxxxxkO0KXNWW                         
+                              WWNNXK0OkkxxxxxxxxxkkkkxxxxxxxxxxkOO0KXNWW                            
+                                 WWWNXXKK0OOOkkkkkkkkkkkkkOO00KXXNNWW                               
+                                      WWWNNNXXXKKKKKKKKXXXXNNNWWW                                   
+                                            WWWWWWWWWWWWWWW                                         
+
+*/
+
+
+
 package fr.eni.prorpjet;
 
 import java.util.Scanner;
