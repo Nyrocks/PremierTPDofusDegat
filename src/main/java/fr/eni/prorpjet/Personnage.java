@@ -166,13 +166,23 @@ public class Personnage {
 
     
     public void affStats() {
+        System.out.println(this.classePersonnage);
+        System.out.println(this.nomPersonnage);
+        System.out.println(this.kama);
+        this.affStatsCombat();
         /*
         Cette fonction affiche la classe du joueur, son nom ainsi que son nombre de kamas.
         Cette fonction affichera également les stats du joueur. (Nom, PV, Att, Def, Crit).
         Elle affichera aussi si le joueur a une potion ou non.
         */
     }
-    public void affStatsCombat() {
+    public void affStatsCombat() { 
+        System.out.println(this.nomPersonnage);
+        System.out.println(this.pvActuel);
+        System.out.println(this.attaque);
+        System.out.println(this.defense);
+        System.out.println(this.coupCritique);
+        System.out.println(this.potion);
         /*
         Cette fonction affiche les stats du joueur. (Nom, PV, Att, Def, Crit)
         Elle affichera aussi si le joueur a une potion ou non.
@@ -180,12 +190,14 @@ public class Personnage {
     }
     public void gagneKama(int gainKama)
     {
+        this.kama = this.kama + gainKama;
         /*
         Cette fonction augmente les kamas du joueur (kama de base + gainKama)
         */
     }
     public void perdreKama(int perdreKama)
     {
+        this.kama = this.kama + perdreKama;
         /*
         Cette fonction diminue les kamas du joueur (kama de base - perdreKama)
         /!\ On ne peut pas avoir un nombre de kamas négatif /!\

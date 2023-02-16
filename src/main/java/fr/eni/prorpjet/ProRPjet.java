@@ -511,6 +511,8 @@ public class ProRPjet {
 
     public static String combat(Personnage p, Adversaire a)
     {
+        
+        
         /*
         Dans cette fonction, vous allez devoir coder la fonction combat.
         Elle devra retourner le nom du monstre (voir ligne 341 si vous voulez savoir pourquoi).

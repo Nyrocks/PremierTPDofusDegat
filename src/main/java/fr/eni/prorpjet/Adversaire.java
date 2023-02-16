@@ -17,7 +17,13 @@ public class Adversaire {
     private int coupCritique;
     private int zone;
     public Adversaire(String unNom, int unNbPvActuel, int unNbPvMax, int uneAtk, int uneDef, int unCC)
-    {        
+    {      
+        this.nomAdversaire = unNom;
+        this.pvActuel = unNbPvActuel;
+        this.pvMax = unNbPvMax;
+        this.attaque = uneAtk;
+        this.defense = uneDef;
+        this.coupCritique = unCC;
         /*
         Ecrire le constructeur.
         */
@@ -77,10 +83,15 @@ public class Adversaire {
 
     public void setCoupCritique(int coupCritique) {
         this.coupCritique = coupCritique;
-    }
+        
+    }   
 
     
     public void affStatsCombat() {
+        System.out.println(this.nomAdversaire);
+        System.out.println(this.pvActuel);
+        System.out.println(this.attaque);
+        System.out.println(this.coupCritique);
         /*
         Cette fonction affiche les stats de l'adversaire. (Nom, PV, Att, Def, Crit)
         */
