@@ -58,6 +58,7 @@
 
 package fr.eni.prorpjet;
 
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -511,6 +512,17 @@ public class ProRPjet {
 
     public static String combat(Personnage p, Adversaire a)
     {
+        Personnage p = Personnage;
+        int i = 0;
+        while (i>4)
+        System.out.println("Que voulez vous faire ?\n"+
+                           "1 - Afficher statistiques\n"+
+                            "2 - Attaquer\n"+
+                            "3 - utiliser une potion"+
+                            " 4 - Fuire\n");
+         if (i == 1){
+            System.out.println(Personnage p.affStats()) 
+         }
         
         
         /*
@@ -550,20 +562,20 @@ public class ProRPjet {
     }
     public static int affCoffre(int multiplicateurGain)
     {
+        Random obj = new Random();               
+        int gainKama = obj.nextInt(100);         //j'ai voulu récupérer le "gainKama" déjà déclaré plus haut mais cela n'a pas marché j'ai du le redéclarer
+        System.out.println("Vous avez gagner : " + gainKama * multiplicateurGain);
         /*
         Cette fonction retourne le gain suite à l'ouverture du coffre.
         Ce gain sera généré aléatoirement entre 1 et 100.
         Le multiplicateurGain permet d'augmenter le gain en le multipliant.
         Vous afficherez un message indiquant la somme gagnée.
         */
-        return 0;
+        return gainKama * multiplicateurGain;
     }
     public static int affCoffrePiege(int degat)
     {
-        System.out.println("ATTENTION UN COFFRE PIÉGÉ !");
-        
-        
-        
+        System.out.println("ATTENTION UN COFFRE PIÉGÉ !" + degat);
         /*
         Cette fonction retourne la variable dégât suite à l'ouverture du coffre.
         Vous afficherez un message indiquant au joueur qu'il est tombé sur un coffre piégé.
