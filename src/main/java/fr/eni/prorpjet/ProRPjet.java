@@ -560,15 +560,20 @@ public class ProRPjet {
     }
     public static int affCoffrePiege(int degat)
     {
+        System.out.println("ATTENTION UN COFFRE PIÉGÉ !");
+        
+        
+        
         /*
         Cette fonction retourne la variable dégât suite à l'ouverture du coffre.
         Vous afficherez un message indiquant au joueur qu'il est tombé sur un coffre piégé.
         Vous afficherez également le nombre de pv qu'il a perdu.
         */
-        return 0;
+        return degat;
     }
     public static void affCoffreVide()
     {
+        System.out.println("ce coffre est vide...");
         /*
         Cette fonction affiche un message expliquant que le coffre est vide.
         */

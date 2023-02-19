@@ -98,6 +98,16 @@ public class Adversaire {
     }
     public void subirDegat(int attaquePersonnage, boolean critiquePersonnage)
     {
+         this.pvActuel = this.pvActuel - attaquePersonnage;
+        if (critiquePersonnage == true){
+            System.out.println("COUP CRITIQUE ! ");
+            this.pvActuel = this.pvActuel - attaquePersonnage - this.coupCritique;
+        }
+        if (this.pvActuel == 0){
+            this.pvActuel = 0;
+            System.out.println("vous êtes mort");
+            
+        }
         /*
         Cette fonction va servir à faire baisser les points de vie de l'adversaire.
         Vous devrez modifier l'attribut "pvActuel" de l'adversaire pointé.

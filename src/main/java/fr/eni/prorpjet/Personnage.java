@@ -205,6 +205,7 @@ public class Personnage {
     }
     public void pertePv(int degat)
     {
+        this.pvActuel = this.pvActuel - degat;
         /*
         Cette fonction diminue les pvActuel du joueur (pvActuel - degat)
         /!\ On ne peut pas avoir un nombre de pv négatif /!\
@@ -212,12 +213,17 @@ public class Personnage {
     }
     public void utilisationPotion()
     {
+        this.pvActuel = this.pvMax;
         /* 
         Cette fonction met les pvActuel du joueur au max.
         */
     }
     public void reposTaverne()
     {
+        this.pvActuel = this.pvActuel + 5;
+        if (this.pvActuel == this.pvMax){
+            this.pvActuel = this.pvActuel;
+        }
         /* 
         Cette fonction augmente les pvActuel du joueur de 5.
         /!\ Le joueur ne pourra pas avoir plus de pvActuel que de pvMax. /!\
@@ -225,12 +231,14 @@ public class Personnage {
     }
     public void affKama()
     {
+        System.out.println(this.kama);
         /*
         Cette fonction affiche le nombre de kamas en la possession du joueur.
         */
     }
     public void affVie()
     {
+        System.out.println("Vous avez "+this.pvActuel +"/"+this.pvMax );
         /*
         Cette fonction affiche le nombre de pv sous la forme "pvActuel" / "pvMax"
         Exemple affichage -> " Vous avez 45/60 pv. "
@@ -238,42 +246,51 @@ public class Personnage {
     }
     public void augPV(int augmentation)
     {
+        this.pvActuel = this.pvActuel + augmentation;
+        this.pvMax = this.pvMax + augmentation;
+        
         /*
         Augmente les pvActuel et pvMax à l'aide de l'argument augmentation.
         */
     }
     public void augCrit(int augmentation)
     {
+        this.coupCritique = this.coupCritique + augmentation;
         /*
         Augmente l'attribut critique à l'aide de l'argument augmentation.
         */
     }
     public void augAttaque(int augmentation)
     {
+        this.attaque = this.attaque + augmentation;
         /*
         Augmente l'attribut attaque à l'aide de l'argument augmentation.
         */
     }
     public void augDefense(int augmentation)
     {
+        this.defense = this.defense + augmentation;
         /*
         Augmente l'attribut defense à l'aide de l'argument augmentation.
         */
     }
     public void affAttaque()
     {
+        System.out.println(this.attaque);
         /*
         Affiche l'attaque du joueur.
         */
     }
     public void affDefense()
     {
+        System.out.println(this.defense);
         /*
         Affiche la défense du joueur.
         */
     }
     public void affCritique()
     {
+        System.out.println("vous avez "+this.coupCritique +"% de critique");
         /*
         Affiche le pourcentage de critique du joueur sous la forme critique%.
          -> Par exemple : "Vous avez 25% de critique"
@@ -281,6 +298,16 @@ public class Personnage {
     }
     public void subirDegat(int attaqueAdversaire, boolean critiqueAdversaire)
     {
+        this.pvActuel = this.pvActuel - attaqueAdversaire;
+        if (critiqueAdversaire == true){
+            System.out.println("COUP CRITIQUE ! ");
+            this.pvActuel = this.pvActuel - attaqueAdversaire - this.coupCritique;
+        }
+        if (this.pvActuel == 0){
+            this.pvActuel = 0;
+            System.out.println("vous êtes mort");
+            
+        }
         /*
         Cette fonction va servir à faire baisser les points de vie du personnage.
         Vous devrez modifier l'attribut "pvActuel" du joueur.
