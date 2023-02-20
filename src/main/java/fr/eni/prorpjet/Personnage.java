@@ -1,4 +1,4 @@
-/*
+    /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -18,6 +18,7 @@ public class Personnage {
     private int coupCritique;
     private int kama;
     private boolean potion;
+    boolean critiqueAdversaire;
 
     public Personnage(String nomPersonnage,
             String classePersonnage,
@@ -301,7 +302,7 @@ public class Personnage {
         this.pvActuel = this.pvActuel - attaqueAdversaire;
         if (critiqueAdversaire == true){
             System.out.println("COUP CRITIQUE ! ");
-            this.pvActuel = this.pvActuel - attaqueAdversaire - this.coupCritique;
+            this.pvActuel = this.pvActuel - attaqueAdversaire * this.coupCritique;
         }
         if (this.pvActuel == 0){
             this.pvActuel = 0;

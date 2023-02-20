@@ -512,18 +512,48 @@ public class ProRPjet {
 
     public static String combat(Personnage p, Adversaire a)
     {
-        Personnage p = Personnage;
+       
         int i = 0;
-        while (i>4)
-        System.out.println("Que voulez vous faire ?\n"+
-                           "1 - Afficher statistiques\n"+
-                            "2 - Attaquer\n"+
-                            "3 - utiliser une potion"+
-                            " 4 - Fuire\n");
+        while (i>4){
+        System.out.println("""
+                           Que voulez vous faire ?
+                           1 - Afficher statistiques
+                           2 - Attaquer
+                           3 - utiliser une potion
+                           4 - Fuire
+                           """);
          if (i == 1){
-            System.out.println(Personnage p.affStats()) 
+         p.affStatsCombat();
+         System.out.println("-------------------------------------");
+         a.affStatsCombat();
          }
-        
+        if (i==2){
+            a.subirDegat(10, true);
+             int nbAlea = f.alea();
+        if(nbAlea < a.getCoupCritique()){
+             p.critiqueAdversaire = true;}
+        else{
+             p.critiqueAdversaire = false;
+        }
+        }
+        if (i==3){
+            if (p.isPotion() == true){
+                p.utilisationPotion();
+            }
+            if (p.isPotion() == false){
+                System.out.println("vous n'avez pas de potion");
+            }
+        }
+        p.subirDegat(15, true);
+            int nbAlea = f.alea();
+        if(nbAlea < a.getCoupCritique()){
+             a.critiquePersonnage = true;
+        }
+             else{
+             a.critiquePersonnage = false;
+                     }
+            
+            }
         
         /*
         Dans cette fonction, vous allez devoir coder la fonction combat.
@@ -550,7 +580,7 @@ public class ProRPjet {
         
                 nbAlea = f.alea(); // Donne un nombre entre 1 et 100;
                 if(nbAlea < a.getCoupCritique()) // Si coupCritique, mettre la variable à true.
-                    crit = true;
+                    //crit = true;
                 else
                     crit = false;
         
@@ -558,7 +588,7 @@ public class ProRPjet {
         Si le joueur ne fuit pas, la seule façon de finir le combat est que l'un des deux antagonistes meurt.
         
         */
-        return "";
+        return p.getNomPersonnage();
     }
     public static int affCoffre(int multiplicateurGain)
     {

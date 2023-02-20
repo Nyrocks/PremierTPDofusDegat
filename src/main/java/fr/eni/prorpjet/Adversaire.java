@@ -14,7 +14,7 @@ public class Adversaire {
     private int pvMax;
     private int attaque;
     private int defense;
-    private int coupCritique;
+    int coupCritique;
     private int zone;
     public Adversaire(String unNom, int unNbPvActuel, int unNbPvMax, int uneAtk, int uneDef, int unCC)
     {      
@@ -101,7 +101,7 @@ public class Adversaire {
          this.pvActuel = this.pvActuel - attaquePersonnage;
         if (critiquePersonnage == true){
             System.out.println("COUP CRITIQUE ! ");
-            this.pvActuel = this.pvActuel - attaquePersonnage - this.coupCritique;
+            this.pvActuel = this.pvActuel - attaquePersonnage * this.coupCritique;
         }
         if (this.pvActuel == 0){
             this.pvActuel = 0;
