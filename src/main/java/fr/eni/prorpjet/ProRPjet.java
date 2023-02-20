@@ -588,7 +588,7 @@ public class ProRPjet {
         Si le joueur ne fuit pas, la seule façon de finir le combat est que l'un des deux antagonistes meurt.
         
         */
-        return p.getNomPersonnage();
+        return a.getNomAdversaire();
     }
     public static int affCoffre(int multiplicateurGain)
     {
