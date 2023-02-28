@@ -99,14 +99,19 @@ public class ProRPjet {
                 + "2 - Parchemin Critique (+2)\n"
                 + "3 - Parchemin d'Attaque (+2)\n"
                 + "4 - Parchemin de Défense (+1)\n"
-                + "5 - Potion\n"
-                + "6 - (retour)\n"
+                + "5 - Chapeau enchanté (500 kamas)(+5 de C.C)(+3 D'attaque)\n"
+                + "6 - Potion\n"
+                + "7 - (retour)\n"
                 + "-----------------------------------------------------";
         String affRecommencer = "-----------------------------------------------------\n" 
                 + "Voulez-vous recommencer ?\n"
                 + "1 - Oui\n"
                 + "2 - Non\n"
                 + "-----------------------------------------------------";
+        String affMonture = "----------------------------------------------------------\n"
+                + "1 - Griffon dorée (500 kamas)\n"
+                + "2 - Cheval hanté (250 kamas)\n"
+                + "3 - Bouftou Royal (1500 kamas)\n";
         // Zone I
         Adversaire bouftou = new Adversaire("Bouftou affamé",
                 10,
@@ -191,17 +196,22 @@ public class ProRPjet {
             if(choixChoix == 1)
             { 
                 System.out.println("Vous arrivez sur la place marchande");
-                choixPlace = f.repet(6, affPlace);
-                if(joueur.getKama() >= 250)
+                choixPlace = f.repet(7, affPlace);
+                
                 {
                     if(choixPlace == 1)
-                    {
+                    {if(joueur.getKama() >= 250){
                         // Parchemin PV
                         joueur.perdreKama(250);
                         joueur.augPV(5);
                         System.out.println("Vous avez acheté un parchemin de PV.");
                         joueur.affKama();
                         joueur.affVie();
+                    }
+                    else
+                {
+                    System.out.println("Mais enfin, vous n'avez pas assez...");
+                }
                         
                     }
                     if(choixPlace == 2)
@@ -231,7 +241,21 @@ public class ProRPjet {
                         joueur.affKama();
                         joueur.affDefense();                        
                     }
-                    if(choixPlace == 5)
+                    if (choixPlace == 5){
+                        if (joueur.getKama() >= 500){
+                            joueur.perdreKama(500);
+                            joueur.augCrit(5);
+                            joueur.augAttaque(3);
+                            System.out.println("Vous avez acheté un chapeau enchanté");
+                            joueur.affKama();
+                            joueur.affCritique();
+                            joueur.affAttaque();
+                        }
+                        else {
+                            System.out.println("Vous êtes en manque de kamas pour acheter ce vieux chapeau ringuard ");
+                        }
+                    }
+                    if(choixPlace == 6)
                     {
                         // Potion
                         if(joueur.isPotion() == true)
@@ -246,10 +270,6 @@ public class ProRPjet {
                             joueur.affKama();
                         }
                     }
-                }
-                else
-                {
-                    System.out.println("Mais enfin, vous n'avez pas assez...");
                 }
                 System.out.println("Vous quittez la place marchande");
             }
@@ -491,7 +511,38 @@ public class ProRPjet {
             {
                 joueur.affStats();
             }
-            if(choixChoix == 6)
+            if (choixChoix ==6){
+                System.out.println("Quel serait pour vous la monture idéal ? ");
+                choixPlace = f.repet(3,affMonture);
+                if (choixPlace == 1){
+                    if(joueur.getKama() >= 500){
+                        joueur.perdreKama(500);
+                        System.out.println("Vous voila maintenant équipé d'un redoutable griffon !");
+                    }
+                    else{
+                        System.out.println("Mais enfin vous n'avez pas assez...");
+                    }
+                }
+                if (choixPlace==2){
+                    if (joueur.getKama() >= 250){
+                        joueur.perdreKama(250);
+                        System.out.println("Un cheval hanté !! Cela me donne froid dans le dos...");
+                    }
+                    else{
+                        System.out.println("Vous n'avez malheureusement pas les fonds nécessaires pour réaliser cet achat");
+                    }
+                }
+                if (choixPlace == 3){
+                    if (joueur.getKama() >=1500){
+                        joueur.perdreKama(1500);
+                       System.out.println("Mesdames et Messieurs j'ai l'honneur de vous annoncer que le boufftou royal possède dès aujourd'hui un hote ");
+                    }
+                    else{
+                        System.out.println("Mais enfin un moins de dix comme vous ne pourra jamais bénéficier d'une telle monture");
+                    }
+                    }
+            }
+            if(choixChoix == 7)
             {
                 break;
             }

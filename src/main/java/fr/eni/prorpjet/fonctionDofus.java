@@ -105,7 +105,8 @@ public class fonctionDofus {
                 + "3 - Affronter les gardiens de donjon.\n"
                 + "4 - Se reposer à la taverne.\n"
                 + "5 - Afficher les statistiques de votre personnage.\n"
-                + "6 - Quitter Dofus.\n"
+                + "6 - Équiper sa monture\n"
+                + "7 - Quitter Dofus.\n"
                 +"-----------------------------------------------------"; 
         return repet(6, aff);
     }
@@ -157,33 +158,7 @@ public class fonctionDofus {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*      
+/*   
         int choix = 0;
         while(choix < 1 | choix > 12)
         {
