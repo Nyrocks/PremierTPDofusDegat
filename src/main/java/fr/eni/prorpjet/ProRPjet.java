@@ -562,49 +562,48 @@ public class ProRPjet {
     }
 
     public static String combat(Personnage p, Adversaire a)
-    {
-       
+    {  
         int i = 0;
         while (i>4){
-        System.out.println("""
-                           Que voulez vous faire ?
-                           1 - Afficher statistiques
-                           2 - Attaquer
-                           3 - utiliser une potion
-                           4 - Fuire
-                           """);
-         if (i == 1){
-         p.affStatsCombat();
-         System.out.println("-------------------------------------");
-         a.affStatsCombat();
-         }
-        if (i==2){
-            a.subirDegat(10, true);
-             int nbAlea = f.alea();
-        if(nbAlea < a.getCoupCritique()){
-             p.critiqueAdversaire = true;}
-        else{
-             p.critiqueAdversaire = false;
-        }
-        }
-        if (i==3){
-            if (p.isPotion() == true){
-                p.utilisationPotion();
+            System.out.println("""
+                               Que voulez vous faire ?
+                               1 - Afficher statistiques
+                               2 - Attaquer
+                               3 - utiliser une potion
+                               4 - Fuire
+                               """);
+             if (i == 1){
+             p.affStatsCombat();
+             System.out.println("-------------------------------------");
+             a.affStatsCombat();
+             }
+            if (i==2){
+                a.subirDegat(10, true);
+                int nbAlea = f.alea();
+                if(nbAlea < a.getCoupCritique()){
+                     p.critiqueAdversaire = true;
+                }
+                else{
+                     p.critiqueAdversaire = false;
+                }
             }
-            if (p.isPotion() == false){
-                System.out.println("vous n'avez pas de potion");
+            if (i==3){
+                if (p.isPotion() == true){
+                    p.utilisationPotion();
+                }
+                if (p.isPotion() == false){
+                    System.out.println("vous n'avez pas de potion");
+                }
             }
-        }
-        p.subirDegat(15, true);
-            int nbAlea = f.alea();
-        if(nbAlea < a.getCoupCritique()){
-             a.critiquePersonnage = true;
-        }
-             else{
-             a.critiquePersonnage = false;
-                     }
-            
+            p.subirDegat(15, true);
+                int nbAlea = f.alea();
+            if(nbAlea < a.getCoupCritique()){
+                 a.critiquePersonnage = true;
             }
+            else{
+                 a.critiquePersonnage = false;
+            }            
+        }
         
         /*
         Dans cette fonction, vous allez devoir coder la fonction combat.
