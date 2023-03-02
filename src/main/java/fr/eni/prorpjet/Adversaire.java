@@ -14,8 +14,9 @@ public class Adversaire {
     private int pvMax;
     private int attaque;
     private int defense;
-    int coupCritique;
+    private int coupCritique;
     private int zone;
+    boolean critiquePersonnage;
     public Adversaire(String unNom, int unNbPvActuel, int unNbPvMax, int uneAtk, int uneDef, int unCC)
     {      
         this.nomAdversaire = unNom;

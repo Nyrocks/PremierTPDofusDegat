@@ -564,7 +564,7 @@ public class ProRPjet {
     public static String combat(Personnage p, Adversaire a)
     {  
         int i = 0;
-        while (i>4){
+        while (i>=4){
             System.out.println("""
                                Que voulez vous faire ?
                                1 - Afficher statistiques
@@ -596,7 +596,8 @@ public class ProRPjet {
                 }
             }
             if (i==4){
-            System.out.println("Vous prenez la fuite")
+            System.out.println("Vous prenez la fuite");
+            break;
               }
             p.subirDegat(15, true);
                 int nbAlea = f.alea();
@@ -607,7 +608,8 @@ public class ProRPjet {
                  a.critiquePersonnage = false;
             }            
         }
-        
+        return a.getNomAdversaire();
+    }
         /*
         Dans cette fonction, vous allez devoir coder la fonction combat.
         Elle devra retourner le nom du monstre (voir ligne 341 si vous voulez savoir pourquoi).
@@ -641,8 +643,7 @@ public class ProRPjet {
         Si le joueur ne fuit pas, la seule façon de finir le combat est que l'un des deux antagonistes meurt.
         
         */
-        return a.getNomAdversaire();
-    }
+        
     public static int affCoffre(int multiplicateurGain)
     {
         Random obj = new Random();               
