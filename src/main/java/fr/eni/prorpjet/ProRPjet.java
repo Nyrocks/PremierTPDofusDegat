@@ -595,6 +595,9 @@ public class ProRPjet {
                     System.out.println("vous n'avez pas de potion");
                 }
             }
+            if (i==4){
+            System.out.println("Vous prenez la fuite")
+              }
             p.subirDegat(15, true);
                 int nbAlea = f.alea();
             if(nbAlea < a.getCoupCritique()){
