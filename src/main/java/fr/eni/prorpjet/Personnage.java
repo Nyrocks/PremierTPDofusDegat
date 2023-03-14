@@ -19,23 +19,18 @@ public class Personnage {
     private int kama;
     private boolean potion;
     boolean critiqueAdversaire;
+    private int vitesseDeDeplacement;
 
-    public Personnage(String nomPersonnage,
-            String classePersonnage,
-            int pvActuel,
-            int pvMax,
-            int attaque,
-            int defense,
-            int coupCritique) 
+    public Personnage(String nomPersonnage,String classePersonnage, int pvActuel,int pvMax, int attaque, int defense, int coupCritique, int vitesseDeDeplacement) 
     {
         this.nomPersonnage = nomPersonnage;
         this.classePersonnage = classePersonnage;
-        
+        this.vitesseDeDeplacement = vitesseDeDeplacement;
         this.pvMax = pvMax;
         this.attaque = attaque;
         this.defense = defense;
         this.coupCritique = coupCritique;
-        this.kama = 150;
+        this.kama = 1500;
         this.potion = true;
         switch(this.classePersonnage)
         {
@@ -91,6 +86,11 @@ public class Personnage {
                 
         }
         this.pvActuel = this.pvMax;
+    }
+
+    @Override
+    public String toString() {
+        return "Personnage{" + "nomPersonnage=" + nomPersonnage + ", classePersonnage=" + classePersonnage + ", pvActuel=" + pvActuel + ", pvMax=" + pvMax + ", attaque=" + attaque + ", defense=" + defense + ", coupCritique=" + coupCritique + ", kama=" + kama + ", potion=" + potion + ", critiqueAdversaire=" + critiqueAdversaire + '}';
     }
 
     public String getNomPersonnage() {
@@ -167,9 +167,10 @@ public class Personnage {
 
     
     public void affStats() {
-        System.out.println(this.classePersonnage);
-        System.out.println(this.nomPersonnage);
-        System.out.println(this.kama);
+        System.out.println("Classe : "+this.classePersonnage);
+        System.out.println("Nom du personnage : "+this.nomPersonnage);
+        System.out.println("Nombre de kamas : "+this.kama);
+        System.out.println("Vitesse de déplacement : "+this.vitesseDeDeplacement);
         this.affStatsCombat();
         /*
         Cette fonction affiche la classe du joueur, son nom ainsi que son nombre de kamas.
@@ -178,12 +179,17 @@ public class Personnage {
         */
     }
     public void affStatsCombat() { 
-        System.out.println(this.nomPersonnage);
-        System.out.println(this.pvActuel);
-        System.out.println(this.attaque);
-        System.out.println(this.defense);
-        System.out.println(this.coupCritique);
-        System.out.println(this.potion);
+        System.out.println("Nom : "+this.nomPersonnage);
+        System.out.println("Hp : " +this.pvActuel);
+        System.out.println("Attaque : "+this.attaque);
+        System.out.println("Defense : "+this.defense);
+        System.out.println("Coup Critique : "+this.coupCritique);
+        if (this.potion == true){
+            System.out.println("Potion : Oui");
+        }
+        if (this.potion == false){
+            System.out.println("Potion : Non");
+        }
         /*
         Cette fonction affiche les stats du joueur. (Nom, PV, Att, Def, Crit)
         Elle affichera aussi si le joueur a une potion ou non.
@@ -198,7 +204,7 @@ public class Personnage {
     }
     public void perdreKama(int perdreKama)
     {
-        this.kama = this.kama + perdreKama;
+        this.kama = this.kama - perdreKama;
         /*
         Cette fonction diminue les kamas du joueur (kama de base - perdreKama)
         /!\ On ne peut pas avoir un nombre de kamas négatif /!\
@@ -296,6 +302,18 @@ public class Personnage {
         Affiche le pourcentage de critique du joueur sous la forme critique%.
          -> Par exemple : "Vous avez 25% de critique"
         */
+    }
+    public void Griffon()
+    {
+        this.vitesseDeDeplacement = this.vitesseDeDeplacement +=50;
+    }
+    public void Cheval()
+    {
+        this.vitesseDeDeplacement = this.vitesseDeDeplacement +=100;
+    }
+    public void BoufftouRoyal()
+    {
+        this.vitesseDeDeplacement = this.vitesseDeDeplacement +=1000;
     }
     public void subirDegat(int attaqueAdversaire, boolean critiqueAdversaire)
     {

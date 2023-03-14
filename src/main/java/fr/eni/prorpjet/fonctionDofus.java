@@ -86,8 +86,7 @@ public class fonctionDofus {
     
     public Personnage creationPerso()
     {
-        Personnage p = new Personnage("", introduction(),
-                55, 55, 2, 1, 20);   
+        Personnage p = new Personnage("", introduction(),55, 55, 2, 1, 20,50);   
         System.out.println("Quel est votre nom disciple " + p.getClassePersonnage()
                 + " ?");
         String nomDuJoueur = s.next();
@@ -105,7 +104,7 @@ public class fonctionDofus {
                 + "3 - Affronter les gardiens de donjon.\n"
                 + "4 - Se reposer à la taverne.\n"
                 + "5 - Afficher les statistiques de votre personnage.\n"
-                + "6 - Équiper sa monture\n"
+                + "6 - Acheter une monture\n"
                 + "7 - Quitter Dofus.\n"
                 +"-----------------------------------------------------"; 
         return repet(6, aff);

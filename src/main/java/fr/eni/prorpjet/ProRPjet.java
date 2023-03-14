@@ -518,15 +518,17 @@ public class ProRPjet {
                     if(joueur.getKama() >= 500){
                         joueur.perdreKama(500);
                         System.out.println("Vous voila maintenant équipé d'un redoutable griffon !");
+                        joueur.Griffon();
                     }
                     else{
                         System.out.println("Mais enfin vous n'avez pas assez...");
                     }
                 }
                 if (choixPlace==2){
-                    if (joueur.getKama() >= 250){
-                        joueur.perdreKama(250);
+                    if (joueur.getKama() >= 750){
+                        joueur.perdreKama(750);
                         System.out.println("Un cheval hanté !! Cela me donne froid dans le dos...");
+                        joueur.Griffon();
                     }
                     else{
                         System.out.println("Vous n'avez malheureusement pas les fonds nécessaires pour réaliser cet achat");
@@ -536,6 +538,7 @@ public class ProRPjet {
                     if (joueur.getKama() >=1500){
                         joueur.perdreKama(1500);
                        System.out.println("Mesdames et Messieurs j'ai l'honneur de vous annoncer que le boufftou royal possède dès aujourd'hui un hote ");
+                       joueur.BoufftouRoyal();
                     }
                     else{
                         System.out.println("Mais enfin un moins de dix comme vous ne pourra jamais bénéficier d'une telle monture");
